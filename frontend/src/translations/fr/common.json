@@ -1,0 +1,23 @@
+{
+  "title": "Ledger Seal",
+  "subtitle": "Votre service de notariat on-chain de confiance — horodatez immuablement vos documents et prouvez leur existence pour toujours sur la blockchain.",
+  "submitDocument": "Soumettre un document",
+  "myDocuments": "Mes documents",
+  "connectWalletPrompt": "Veuillez connecter votre portefeuille pour soumettre ou consulter des documents.",
+  "immutableProofTitle": "Preuve immuable",
+  "immutableProofDescription": "Stockez les empreintes de vos documents sur la blockchain où elles ne peuvent pas être modifiées ni supprimées.",
+  "privacyFirstTitle": "La confidentialité avant tout",
+  "privacyFirstDescription": "Seules les empreintes sont enregistrées, vos documents restent privés hors de la blockchain.",
+  "easyAccessibleTitle": "Simple & accessible",
+  "easyAccessibleDescription": "Soumettez et vérifiez les preuves depuis n'importe quel appareil, sans inscription.",
+  "connectWallet": "Connecter le portefeuille",
+  "titleSubmit": "Soumettre un nouveau document",
+  "notConnectedMessage": "Vous n'êtes pas connecté à un portefeuille. Veuillez vous connecter pour soumettre un document.",
+  "broadcast": "Diffuser le fichier sur la blockchain",
+  "titleHistory": "Historique des documents",
+  "noDocumentsFound": "Aucun document trouvé.",
+  "viewTx": "🔗 Voir la transaction",
+  "block": "Bloc :",
+  "hash": "Empreinte :",
+  "date": "Date :"
+}

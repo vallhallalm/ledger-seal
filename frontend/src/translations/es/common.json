@@ -1,0 +1,23 @@
+{
+  "title": "Ledger Seal",
+  "subtitle": "Tu servicio de notaría en la cadena de confianza: sella con marcas de tiempo inmutables tus documentos y demuestra su existencia para siempre en la blockchain.",
+  "submitDocument": "Enviar documento",
+  "myDocuments": "Mis documentos",
+  "connectWalletPrompt": "Por favor, conecta tu cartera para enviar o ver documentos.",
+  "immutableProofTitle": "Prueba inmutable",
+  "immutableProofDescription": "Guarda los hashes de los documentos en la blockchain, donde no pueden modificarse ni eliminarse.",
+  "privacyFirstTitle": "Privacidad ante todo",
+  "privacyFirstDescription": "Solo se almacenan los hashes, tus documentos permanecen privados fuera de la cadena.",
+  "easyAccessibleTitle": "Fácil y accesible",
+  "easyAccessibleDescription": "Envía y verifica pruebas desde cualquier dispositivo sin necesidad de registro.",
+  "connectWallet": "Conectar cartera",
+  "titleSubmit": "Enviar un nuevo documento",
+  "notConnectedMessage": "No estás conectado a una cartera. Por favor, conéctate para enviar un documento.",
+  "broadcast": "Publicar archivo en la cadena",
+  "titleHistory": "Historial de documentos",
+  "noDocumentsFound": "No se encontraron documentos.",
+  "viewTx": "🔗 Ver transacción",
+  "block": "Bloque:",
+  "hash": "Hash:",
+  "date": "Fecha:"
+}

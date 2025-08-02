@@ -1,0 +1,23 @@
+{
+  "title": "Ledger Seal",
+  "subtitle": "Seu serviço notarial confiável on-chain — registre permanentemente seus documentos com carimbo de data/hora imutável e comprove sua existência para sempre na blockchain.",
+  "submitDocument": "Enviar Documento",
+  "myDocuments": "Meus Documentos",
+  "connectWalletPrompt": "Por favor, conecte sua carteira para enviar ou visualizar documentos.",
+  "immutableProofTitle": "Prova Imutável",
+  "immutableProofDescription": "Armazene hashes de documentos na blockchain, onde não podem ser alterados ou apagados.",
+  "privacyFirstTitle": "Privacidade em Primeiro Lugar",
+  "privacyFirstDescription": "Apenas os hashes são armazenados — seus documentos permanecem privados fora da blockchain.",
+  "easyAccessibleTitle": "Fácil e Acessível",
+  "easyAccessibleDescription": "Envie e verifique provas de qualquer dispositivo, sem necessidade de cadastro.",
+  "connectWallet": "Conectar Carteira",
+  "titleSubmit": "Enviar um novo documento",
+  "notConnectedMessage": "Você não está conectado a uma carteira. Conecte-se para enviar um documento.",
+  "broadcast": "Publicar arquivo na blockchain",
+  "titleHistory": "Histórico de Documentos",
+  "noDocumentsFound": "Nenhum documento encontrado.",
+  "viewTx": "🔗 Ver Transação",
+  "block": "Bloco:",
+  "hash": "Hash:",
+  "date": "Data:"
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Ledger Seal",
+  "subtitle": "Ihr vertrauenswürdiger Notariatsdienst auf der Blockchain – versehen Sie Ihre Dokumente mit einem unveränderlichen Zeitstempel und beweisen Sie deren Existenz für immer.",
+  "submitDocument": "Dokument einreichen",
+  "myDocuments": "Meine Dokumente",
+  "connectWalletPrompt": "Bitte verbinden Sie Ihre Wallet, um Dokumente einzureichen oder anzusehen.",
+  "immutableProofTitle": "Unveränderlicher Nachweis",
+  "immutableProofDescription": "Speichern Sie Dokument-Hashes dauerhaft auf der Blockchain – sie können weder geändert noch gelöscht werden.",
+  "privacyFirstTitle": "Datenschutz zuerst",
+  "privacyFirstDescription": "Es werden nur Hashes gespeichert – Ihre Dokumente bleiben außerhalb der Blockchain privat.",
+  "easyAccessibleTitle": "Einfach & Zugänglich",
+  "easyAccessibleDescription": "Reichen Sie Nachweise von jedem Gerät ein und überprüfen Sie sie – ganz ohne Registrierung.",
+  "connectWallet": "Wallet verbinden",
+  "titleSubmit": "Neues Dokument einreichen",
+  "notConnectedMessage": "Sie sind nicht mit einer Wallet verbunden. Bitte verbinden Sie sich, um ein Dokument einzureichen.",
+  "broadcast": "Datei auf der Blockchain veröffentlichen",
+  "titleHistory": "Dokumentenverlauf",
+  "noDocumentsFound": "Keine Dokumente gefunden.",
+  "viewTx": "🔗 Transaktion anzeigen",
+  "block": "Block:",
+  "hash": "Hash:",
+  "date": "Datum:"
+}
