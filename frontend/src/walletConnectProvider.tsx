@@ -7,16 +7,17 @@ import {
   darkTheme,
 } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
-import {
+/*import {
   mainnet,
   polygon,
   optimism,
   arbitrum,
   base,
   chiliz,
-} from "wagmi/chains";
+} from "wagmi/chains";*/
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { chilizTestnet } from "./blockchainUtils/chilizTestnet";
+import { holeskyTestnet } from "./blockchainUtils/ethHoleskyTestnet";
 
 export default function WalletConnectProvider({
   children,
@@ -27,7 +28,16 @@ export default function WalletConnectProvider({
   const config = getDefaultConfig({
     appName: "My RainbowKit App",
     projectId: "YOUR_PROJECT_ID",
-    chains: [mainnet, polygon, optimism, arbitrum, base, chiliz, chilizTestnet],
+    chains: [
+      /*mainnet,
+      polygon,
+      optimism,
+      arbitrum,
+      base,
+      chiliz,*/
+      chilizTestnet,
+      holeskyTestnet,
+    ],
     ssr: true, // If your dApp uses server side rendering (SSR)
   });
   return (

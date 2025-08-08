@@ -9,6 +9,7 @@ import { useEthersSigner } from "../blockchainUtils/signer";
 import { commitDocument } from "../queries/commitDocument";
 import { toast } from "react-hot-toast";
 import type { ContractTransactionReceipt } from "ethers";
+import { useNavigate } from "react-router-dom";
 
 const hashFileKeccak = async (file: File): Promise<string> => {
   const arrayBuffer = await file.arrayBuffer();
@@ -21,6 +22,7 @@ function SubmitADocumentPage() {
   const { t } = useTranslation("");
   const signer = useEthersSigner();
   const { address: accountAddress } = useAccount();
+  const navigate = useNavigate();
 
   const [file, setFile] = useState<File | null>(null);
   const [fileHash, setFileHash] = useState<string | null>(null);
@@ -47,6 +49,7 @@ function SubmitADocumentPage() {
     onSuccess: (data: ContractTransactionReceipt) => {
       setFile(null);
       setFileHash(null);
+      navigate("/my-documents");
       toast.custom(
         (t) => (
           <div

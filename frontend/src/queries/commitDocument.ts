@@ -1,7 +1,6 @@
 import { ethers, JsonRpcSigner } from "ethers";
 import { CONTRACT_ABI } from "../blockchainUtils/contractAbi";
-
-const CONTRACT_ADDRESS = "0x97D2B71251989F5320AB1980579bEA9C57a7d436"; // Replace with your contract address
+import { getContractInfoForCurrentNetwork } from "../blockchainUtils/contractUtils";
 
 export async function commitDocument(
   signer: JsonRpcSigner,
@@ -9,7 +8,13 @@ export async function commitDocument(
   fileName: string,
   fileHash: string
 ) {
-  const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+  const contractInfo = await getContractInfoForCurrentNetwork();
+
+  const contract = new ethers.Contract(
+    contractInfo.address,
+    CONTRACT_ABI,
+    signer
+  );
   const tx = await contract.commitDocument(owner, fileName, fileHash);
 
   return tx

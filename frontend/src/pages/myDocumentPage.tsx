@@ -1,9 +1,11 @@
 import { useAccount } from "wagmi";
 import { useTranslation } from "react-i18next";
-import { ethers } from "ethers";
 import LogoLoader from "../components/logoLoader";
 import { useQuery } from "@tanstack/react-query";
 import { getUserDocument } from "../queries/getUserDocument";
+import { getJsonRpcProviderForCurrentNetwork } from "../blockchainUtils/jsonRpcProvider";
+import { useEffect, useState } from "react";
+import { getExplorerUrl } from "../blockchainUtils/blockExporers";
 
 export type SealedDocumentEvent = {
   txHash: string;
@@ -22,12 +24,21 @@ function DocumentHistoryPage() {
     queryKey: ["userDocuments", address],
     queryFn: async () => {
       if (!address) return [];
-      const provider = new ethers.JsonRpcProvider(
-        "https://spicy-rpc.chiliz.com" // replace with your RPC URL
-      );
+      const provider = await getJsonRpcProviderForCurrentNetwork();
       return getUserDocument(provider, address);
     },
   });
+
+  const [explorerUrl, setExplorerUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchExplorerUrl() {
+      const explorer = await getExplorerUrl();
+      setExplorerUrl(explorer);
+    }
+
+    fetchExplorerUrl();
+  }, []);
 
   return (
     <div
@@ -84,14 +95,16 @@ function DocumentHistoryPage() {
                       minute: "2-digit",
                     })}
                   </p>
-                  <a
-                    href={`https://testnet.chiliscan.com/tx/${doc.txHash}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm mt-2 inline-block text-[#d4af37] underline hover:text-[#f5e9c3]"
-                  >
-                    {t("viewTx")}
-                  </a>
+                  {explorerUrl && (
+                    <a
+                      href={`${explorerUrl}/tx/${doc.txHash}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm mt-2 inline-block text-[#d4af37] underline hover:text-[#f5e9c3]"
+                    >
+                      {t("viewTx")}
+                    </a>
+                  )}
                 </div>
               ))}
             </div>

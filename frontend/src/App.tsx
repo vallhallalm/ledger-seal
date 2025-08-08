@@ -4,8 +4,23 @@ import Navbar from "./components/navbar"; // Adjust the import path as necessary
 import SubmitADocumentPage from "./pages/submitADocumentPage";
 import { Toaster } from "react-hot-toast";
 import DocumentHistoryPage from "./pages/myDocumentPage";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    if (!window.ethereum?.on) return;
+
+    const handleChainChanged = () => {
+      window.location.reload();
+    };
+
+    window.ethereum.on("chainChanged", handleChainChanged);
+
+    return () => {
+      window.ethereum.removeListener("chainChanged", handleChainChanged);
+    };
+  }, []);
+
   return (
     <>
       <Navbar />
