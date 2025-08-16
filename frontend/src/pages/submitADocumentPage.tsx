@@ -10,6 +10,7 @@ import { commitDocument } from "../queries/commitDocument";
 import { toast } from "react-hot-toast";
 import type { ContractTransactionReceipt } from "ethers";
 import { useNavigate } from "react-router-dom";
+import { colors } from "../theme";
 
 const hashFileKeccak = async (file: File): Promise<string> => {
   const arrayBuffer = await file.arrayBuffer();
@@ -53,7 +54,7 @@ function SubmitADocumentPage() {
       toast.custom(
         (t) => (
           <div
-            className={`max-w-sm w-full bg-[#0B1A3F] text-[#d4af37] border border-[#d4af37] rounded-lg shadow-lg px-4 py-3 transition-opacity ${
+            className={`max-w-sm w-full bg-background text-primary border border-primary rounded-lg shadow-lg px-4 py-3 transition-opacity ${
               t.visible ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -64,7 +65,7 @@ function SubmitADocumentPage() {
               href={`https://testnet.chiliscan.com/tx/${data.hash}`}
               target="_blank"
               onClick={() => toast.dismiss(t.id)}
-              className="mt-2 inline-block text-sm underline hover:text-[#f5e9c3] transition"
+              className={`mt-2 inline-block text-sm underline hover:text-backgroundTextHover transition`}
             >
               🔍 View details
             </a>
@@ -83,10 +84,12 @@ function SubmitADocumentPage() {
 
   return (
     <div
-      className="min-h-screen bg-[#0B1A3F] text-[#F5F1E9] flex flex-col items-center justify-center px-6 pt-8"
+      className={`min-h-screen bg-background text-backgroundText flex flex-col items-center justify-center px-6 pt-8`}
       style={{ paddingTop: "100px", maxWidth: "100vw" }}
     >
-      <div className="max-w-5xl text-center relative decorative-border p-10 rounded-lg shadow-[0_0_15px_#d4af37cc]">
+      <div
+        className={`max-w-5xl text-center relative decorative-border p-10 rounded-lg shadow-[0_0_15px_primary]`}
+      >
         <h1
           className="text-4xl md:text-5xl font-serif font-bold tracking-widest mb-5"
           style={{ letterSpacing: "0.2em", fontFamily: "'Cinzel', serif" }}
@@ -94,20 +97,20 @@ function SubmitADocumentPage() {
           {t("titleSubmit")}
         </h1>
         <div className="flex justify-center mb-8 items-center gap-2">
-          <div className="w-20 h-1 bg-[#d4af37] rounded-full"></div>
-          <div className="w-1.5 h-7 border-2 border-[#d4af37] rounded-sm"></div>
-          <div className="w-20 h-1 bg-[#d4af37] rounded-full"></div>
+          <div className={`w-20 h-1 bg-primary rounded-full`}></div>
+          <div className={`w-1.5 h-7 border-2 border-primary rounded-sm`}></div>
+          <div className={`w-20 h-1 bg-primary rounded-full`}></div>
         </div>
         <div>
           {isConnected ? (
-            <div className="text-lg md:text-xl font-light text-[#d4af37]">
+            <div className={`text-lg md:text-xl font-light text-primary`}>
               <FileDropzone file={file} setFile={setFile} />
               {!!file && (
                 <div className="justify-center items-center flex flex-col mt-8">
                   {fileHash && !isPending ? (
                     <div className="justify-center items-center flex flex-col">
                       <button
-                        className="px-7 py-2 rounded bg-[#d4af37] text-[#0B1A3F] hover:bg-[#c9a932] font-semibold tracking-wide"
+                        className={`px-7 py-2 rounded bg-primary text-background hover:bg-hoverPrimary font-semibold tracking-wide`}
                         onClick={() => commitDoc()}
                       >
                         {t("broadcast")}
@@ -122,7 +125,7 @@ function SubmitADocumentPage() {
               )}
             </div>
           ) : (
-            <div className="text-lg md:text-xl font-light text-[#d4af37]">
+            <div className={`text-lg md:text-xl font-light text-primary`}>
               {t("notConnectedMessage")}
             </div>
           )}
@@ -130,8 +133,8 @@ function SubmitADocumentPage() {
       </div>
       <style>{`
         .decorative-border {
-          border: 2px solid #d4af37;
-          box-shadow: 0 0 15px #d4af37cc;
+          border: 2px solid ${colors.primary};
+          box-shadow: 0 0 15px ${colors.primary};
           position: relative;
         }
         .decorative-border::before {
@@ -141,7 +144,7 @@ function SubmitADocumentPage() {
           left: -8px;
           right: -8px;
           bottom: -8px;
-          border: 1px solid #d4af37;
+          border: 1px solid ${colors.primary};
           pointer-events: none;
         }
       `}</style>

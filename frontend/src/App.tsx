@@ -5,6 +5,7 @@ import SubmitADocumentPage from "./pages/submitADocumentPage";
 import { Toaster } from "react-hot-toast";
 import DocumentHistoryPage from "./pages/myDocumentPage";
 import { useEffect } from "react";
+import { colors } from "./theme";
 
 function App() {
   useEffect(() => {
@@ -36,9 +37,9 @@ function App() {
           toastOptions={{
             duration: 5000,
             style: {
-              background: "#0B1A3F",
-              color: "#d4af37",
-              border: "1px solid #d4af37",
+              background: colors.background,
+              color: colors.primary,
+              border: `1px solid ${colors.primary}`,
               fontFamily: "Cinzel, serif",
             },
           }}

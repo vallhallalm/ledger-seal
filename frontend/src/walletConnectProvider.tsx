@@ -18,6 +18,7 @@ import { WagmiProvider } from "wagmi";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { chilizTestnet } from "./blockchainUtils/chilizTestnet";
 import { holeskyTestnet } from "./blockchainUtils/ethHoleskyTestnet";
+import { colors } from "./theme";
 
 export default function WalletConnectProvider({
   children,
@@ -45,7 +46,7 @@ export default function WalletConnectProvider({
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider
           theme={darkTheme({
-            accentColor: "#2C6CBC",
+            accentColor: colors.contrast,
             accentColorForeground: "white",
             borderRadius: "large",
             fontStack: "system",
